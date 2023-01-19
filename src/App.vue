@@ -18,7 +18,5 @@ export default {
 
 <!-- CSS -->
 <style>
-img {
-    width: 100%;
-}
+
 </style>

@@ -3,18 +3,26 @@ export default {
     name: 'AppHero',
     data() {
         return {
-            image: 'guernica.jpg'
+            images: ['guernica.jpg', 'notte-stellata.jpg']
+        }
+    },
+    methods: {
+        createImg(image) {
+            const url = new URL(`../assets/${image}`, import.meta.url);
+            return url.href;
         }
     }
 }
 </script>
 
 <template>
-    <div>
-        <img src="../assets/guernica.jpg" alt="guernica">
+    <div v-for="image in images">
+        <img :src="createImg(image)" alt="banner">
     </div>
 </template>
 
 <style>
-
+img {
+    width: 100%;
+}
 </style>
